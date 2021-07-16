@@ -1,2 +1,5 @@
 export { ListCategoriesController } from './list-categories-controller'
 export { FindCategoryByIdController } from './find-category-by-id-controller'
+export { CreateCategoryController } from './create-category-controller'
+export { DeleteCategoryController } from './delete-category-controller'
+export { UpdateCategoryController } from './update-category-controller'

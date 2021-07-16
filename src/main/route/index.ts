@@ -5,7 +5,7 @@ const routes = [
   categoryRoute
 ]
 
-export function setupRoutes (app: Express) {
+export function setupRoutes (app: Express): void {
   for (const route of routes) {
     app.use(route.path, route.route)
   }

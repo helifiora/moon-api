@@ -1,8 +1,6 @@
 import { Request, Response } from 'express'
-import { Controller } from '@/presenters/controller/controller'
 import { adaptRequest } from './adapt-request'
-
-type ControllerFactory = () => Controller
+import { ControllerFactory } from '../factory/helpers'
 
 export function adaptRoute (controllerFac: ControllerFactory) {
   return async (req: Request, res: Response) => {
