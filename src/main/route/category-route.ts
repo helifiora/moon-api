@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import { createRoute } from './helper'
 import { adaptRoute } from '../adapter/adapt-route'
+import { categoriesControllerFactory as factory } from '../factory'
 
 import {
   ListCategoriesController,
@@ -10,7 +11,7 @@ import {
 const path = '/categories'
 const router = Router()
 
-router.get('/', adaptRoute(() => new ListCategoriesController()))
-router.get('/:id', adaptRoute(() => new FindCategoryByIdController()))
+router.get('/', adaptRoute(factory(ListCategoriesController)))
+router.get('/:id', adaptRoute(factory(FindCategoryByIdController)))
 
 export const categoryRoute = createRoute(path, router)
